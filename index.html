@@ -6,6 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Arya Dinejad</title>
   <link rel="stylesheet" href="public/css/style.css">
+  <script>
+    if (localStorage.the === 'dark' || (!('the' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  document.documentElement.classList.add('dark')
+} else {
+  document.documentElement.classList.remove('dark')
+}
+  </script>
 </head>
 <body>
     <!-- Header Start -->
@@ -13,7 +20,7 @@
       <div class="container">
         <div class="flex items-center justify-between relative">
           <div class="px-4">
-            <a href="#home" class="font-bold text-lg text-primary block py-6">Arya Dinejad</a>
+            <a href="#home" class="font-bold text-lg text-primary dark:text-white block py-6">Arya Dinejad</a>
           </div>
           <div class="flex items-center justify-center px-4">
             <button id="hamburger" name="hamburger" type="button" class="block absolute right-4 lg:hidden">
@@ -22,19 +29,31 @@
               <span class="hamburger transition duration-300 ease-out origin-bottom-left"></span>
             </button>
 
-            <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none">
+            <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none dark:bg-dark dark:shadow-slate-500 lg:dark:bg-transparent">
               <ul class="block lg:flex">
                 <li class="group">
-                  <a class="text-base text-dark py-2 mx-8 flex group-hover:text-primary" href="#home">Beranda</a>
+                  <a class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white" href="#home">Beranda</a>
                 </li>
                 <li class="group">
-                  <a class="text-base text-dark py-2 mx-8 flex group-hover:text-primary" href="#about">About</a>
+                  <a class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white" href="#about">About</a>
                 </li>
                 <li class="group">
-                  <a class="text-base text-dark py-2 mx-8 flex group-hover:text-primary" href="#portfolio">Portfolio</a>
+                  <a class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white" href="#portfolio">Portfolio</a>
                 </li>
                 <li class="group">
-                  <a class="text-base text-dark py-2 mx-8 flex group-hover:text-primary" href="#portfolio">Contact</a>
+                  <a class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white" href="#portfolio">Contact</a>
+                </li>
+                <li class="flex items-center pl-8 mt-3 lg:mt-0">
+                  <div class="flex">
+                    <span class="mr-2 text-sm text-slate-500">Light</span>
+                    <input type="checkbox" class="hidden" id="dark-toggle">
+                    <label for="dark-toggle">
+                      <div class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1">
+                        <div class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out"></div>
+                      </div>
+                    </label>
+                    <span class="mr-2 text-sm text-slate-500">Dark</span>
+                  </div>
                 </li>
               </ul>
             </nav>
@@ -45,13 +64,13 @@
     <!-- Header End -->
 
     <!-- Hero Start -->
-    <section id="home" class="pt-36">
+    <section id="home" class="pt-36 dark:bg-dark">
       <div class="container">
         <div class="flex flex-wrap">
           <div class="w-full self-center px-4 md:w-1/2">
-            <h1 class="text-base font-semibold text-primary md:text-xl">Halo Semua 👋, Saya <span class="block font-bold text-dark text-4xl mt-1 lg:text-5xl">Arya Dinejad</span></h1>
-            <h2 class="font-medium text-slate-500 text-lg mb-5 lg:text-2xl">Siswa & Web <span class="text-dark">Developer</span></h2>
-            <p class="font-medium text-secondary mb-10 leading-relaxed">Belajar ngoding itu menyenangkan bukan, <span class="text-dark font-bold">bukan!</span></p>
+            <h1 class="text-base font-semibold text-primary md:text-xl">Halo Semua 👋, Saya <span class="block font-bold text-dark text-4xl mt-1 lg:text-5xl dark:text-white">Arya Dinejad</span></h1>
+            <h2 class="font-medium text-slate-500 text-lg mb-5 lg:text-2xl">Siswa & Web <span class="text-dark dark:text-white">Developer</span></h2>
+            <p class="font-medium text-secondary mb-10 leading-relaxed">Belajar ngoding itu menyenangkan bukan, <span class="text-dark font-bold dark:text-white">bukan!</span></p>
 
             <a href="#" class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out">Hubungi Saya</a>
           </div>
@@ -66,16 +85,16 @@
     <!-- Hero End -->
 
     <!-- About Start -->
-    <section id="about" class="pt-36 pb-32">
+    <section id="about" class="pt-36 pb-32 dark:bg-dark">
       <div class="container">
       <div class="flex flex-wrap">
         <div class="w-full px-4 mb-10 lg:w-1/2">
           <h4 class="font-bold uppercase text-primary text-lg mb-3">about</h4>
-          <h2 class="font-bold text-dark text-3xl mb-3 mx-w-md lg:text-4xl">Arya Dinejad</h2>
+          <h2 class="font-bold text-dark text-3xl mb-3 mx-w-md lg:text-4xl dark:text-white">Arya Dinejad</h2>
           <p class="font-medium text-base text-secondary mx-ml-xl lg:text-lg">Arya dinejad adalah imigran dari surga yang diturunkan ke bumi oleh ayah dan ibunya di kamar pengantin.</p>
         </div>
         <div class="w-full px-4 lg:w-1/2">
-          <h3 class="font-semibold text-dark text-2xl mb-4 lg:text-3xl lg:pt-10">Mari bertaman</h3>
+          <h3 class="font-semibold text-dark text-2xl mb-4 lg:text-3xl lg:pt-10 dark:text-white">Mari bertaman</h3>
           <p class="font-medium text-base text-secondary mb-6 lg:text-lg">Jangan hanya dilihat tapi di follow juga yah,ya walaupun soisal media saya sebenernya tidak apa-apa.</p>
           <div class="flex items-center">
             <!-- Youtube -->
@@ -98,12 +117,12 @@
     <!-- About End -->
 
     <!-- Portfolio Start -->
-    <section id="portfolio" class="pt-36 pb-16 bg-slate-100">
+    <section id="portfolio" class="pt-36 pb-16 bg-slate-100 dark:bg-slate-800">
       <div class="container">
         <div class="w-full px-4">
           <div class="max-w-xl mx-auto text-center mb-16">
             <h4 class="font-semibold text-lg mb-2 text-primary">Portfolio</h4>
-            <h2 class="font-bold text-dark text-3xl mb-4">Project Yang Pernah Dibuat</h2>
+            <h2 class="font-bold text-dark text-3xl mb-4 dark:text-white">Project Yang Pernah Dibuat</h2>
             <p class="font-medium text-md text-secondary">Kalian bisa melihat beberapa project yang pernah saya buat dibawah ini</p>
           </div>
         </div>
@@ -113,29 +132,29 @@
             <div class="rounded-md shadow-md overflow-hidden">
               <img src="public/img/smkn.PNG" alt="PPDB" width="w-full">
             </div>
-            <h3 class="font-semibold text-xl text-dark mt-5 mb-3">PPDB Sekolah</h3>
-            <p>Website untuk pendaftaran siswa baru.</p>
+            <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white">PPDB Sekolah</h3>
+            <p class="text-base font-medium text-secondary">Website untuk pendaftaran siswa baru.</p>
           </div>
           <div class="mb-12 p-4 md:w-1/2">
             <div class="rounded-md shadow-md overflow-hidden">
               <img src="public/img/crudci.PNG" alt="PPDB" width="w-full">
             </div>
-            <h3 class="font-semibold text-xl text-dark mt-5 mb-3">Crud Codeigniter</h3>
-            <p>Website admin untuk menambahkan data,edit data, dan hapus data.</p>
+            <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white">Crud Codeigniter</h3>
+            <p class="text-base font-medium text-secondary">Website admin untuk menambahkan data,edit data, dan hapus data.</p>
           </div>
           <div class="mb-12 p-4 md:w-1/2">
             <div class="rounded-md shadow-md overflow-hidden">
               <img src="public/img/makeup.PNG" alt="PPDB" width="w-full">
             </div>
-            <h3 class="font-semibold text-xl text-dark mt-5 mb-3">Landing page </h3>
-            <p>Untuk memperkenalkan jasa atau makanan yang anda buat.</p>
+            <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white">Landing page </h3>
+            <p class="text-base font-medium text-secondary">Untuk memperkenalkan jasa atau makanan yang anda buat.</p>
           </div>
           <div class="mb-12 p-4 md:w-1/2">
             <div class="rounded-md shadow-md overflow-hidden">
               <img src="public/img/pariwisata.PNG" alt="PPDB" width="w-full">
             </div>
-            <h3 class="font-semibold text-xl text-dark mt-5 mb-3">Pariwisata</h3>
-            <p>Untuk memperkenalkan destinasi wisata yang ada di daerah Pandeglang.</p>
+            <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white">Pariwisata</h3>
+            <p class="text-base font-medium text-secondary">Untuk memperkenalkan destinasi wisata yang ada di daerah Pandeglang.</p>
           </div>
         </div>
       </div>
@@ -143,12 +162,12 @@
     <!-- Portfolio End -->
 
     <!-- Contact Start -->
-    <section id="contact" class="pt-36 pb-32">
+    <section id="contact" class="pt-36 pb-32 dark:bg-dark">
       <div class="container">
         <div class="w-full px-4">
           <div class="max-w-xl mx-auto text-center mb-16">
             <h4 class="font-semibold text-lg text-primary mb-2">Contact</h4>
-            <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl">Hubungi Kami</h2>
+            <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-white">Hubungi Kami</h2>
             <p class="font-medium text-md text-secondary md:text-lg">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum eos tempora labore totam mollitia nostrum consectetur libero animi officia possimus?</p>
           </div>
         </div>
@@ -165,7 +184,7 @@
         </div>
         <div class="w-full px-4 mb-8">
           <label class="text-base font-bold text-primary" for="email">Pesan</label>
-          <textarea type="email" id="name" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary h-32"></textarea>
+          <textarea type="email" id="name" class="w-full  bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary h-32"></textarea>
         </div>
         <div class="w-full">
           <button class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full w-full hover:opacity-80 hover:shadow-lg transition duration-500">Kirim</button>
